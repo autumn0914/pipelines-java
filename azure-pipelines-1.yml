@@ -11,3 +11,16 @@ pool: Default
 steps:
 - script: echo hello from windows
 
+- task: BlackDuckSecurityScan@2
+  displayName: 'Coverity Scan'
+  inputs:
+    coverity_url: $(COVERITY_URL)
+    coverity_user: $(COV_USER)
+    coverity_passphrase: $(COVERITY_PASSPHRASE)
+    coverity_policy_view: $(COVERITY_VIEW)
+    coverity_prcomment_enabled: true
+    azure_token: $(System.AccessToken)
+    mark_build_status: 'SucceededWithIssues'
+    # coverity_local: true
+    # include_diagnostics: true
+
