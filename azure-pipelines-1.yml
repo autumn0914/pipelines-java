@@ -11,12 +11,8 @@ pool: Default
 jobs:
 - job: BUILD
   steps:
-  - script: cov-build --dir idir mvn clean compile
+  - script: cov-build --dir idir C:\Test\apache-maven-3.8.8-bin\apache-maven-3.8.8\bin\mvn clean compile
   - script: echo BUILD complete
-- job: ANALYSIS
-  steps:
   - script: cov-analyze --dir idir --all
-- job: COMMIT
-  steps:
   - script: echo COMMIT
 
