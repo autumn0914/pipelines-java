@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: RYANXU6563
 
 steps:
 - task: Maven@3
