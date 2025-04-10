@@ -12,7 +12,11 @@ jobs:
 - job: BUILD
   steps:
   - script: cov-build --dir idir mvn clean compile
-- job: InitialB
+  - script: echo BUILD complete
+- job: ANALYSIS
   steps:
-  - script: echo hello from initial B
+  - script: cov-analyze --dir idir --all
+- job: COMMIT
+  steps:
+  - script: echo COMMIT
 
