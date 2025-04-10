@@ -6,10 +6,11 @@
 trigger:
 - main
 
-pool:
-  vmImage: RYANXU6563
+pool: Default
 
 steps:
+- script: echo hello from windows
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
